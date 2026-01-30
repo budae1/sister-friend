@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>누나 친구</title>
+    <style>
+        :root {
+            --primary-pink: #FFB6C1; /* 연한 핑크 */
+            --secondary-pink: #FF69B4; /* 핫핑크 */
+            --light-bg: #FFF5F7; /* 아주 연한 핑크 배경 */
+            --text-color: #333333;
+            --card-bg: #FFFFFF;
+            --border-light: #FFDDEE;
+            --transition-speed: 0.3s ease-in-out;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            font-family: 'Noto Sans KR', sans-serif; /* 더 부드러운 한글 폰트 */
+            margin: 0;
+            padding: 40px;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            color: var(--secondary-pink);
+            text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.3);
+            margin: 0;
+            position: relative;
+        }
+
+        .header h1::before,
+        .header h1::after {
+            content: '♥';
+            font-size: 0.8em;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .header h1::before {
+            left: -50px;
+        }
+
+        .header h1::after {
+            right: -50px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--primary-pink);
+            margin-top: 15px;
+            border-bottom: 2px dashed var(--primary-pink);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--secondary-pink);
+            margin-top: 80px;
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .section-title::before {
+            content: '▶'; /* 삼각형 아이콘 */
+            color: var(--primary-pink);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+        }
+
+        .character-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .character-card {
+            background-color: var(--card-bg);
+            border: 2px solid var(--primary-pink);
+            border-radius: 15px;
+            padding: 25px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(255, 182, 193, 0.4);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
+        }
+
+        .character-card img {
+            width: 100%;
+            height: auto;
+            max-height: 250px; /* 이미지 높이 제한 */
+            object-fit: cover; /* 이미지가 잘리지 않게 채움 */
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 2px solid var(--secondary-pink);
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .character-card h3 {
+            font-size: 2rem;
+            color: var(--secondary-pink);
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .character-card .nickname {
+            font-size: 1.1rem;
+            color: var(--primary-pink);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .character-card p {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .character-card .tags {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .character-card .tag {
+            background-color: var(--border-light);
+            color: var(--secondary-pink);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border: 1px solid var(--primary-pink);
+        }
+
+        .footer {
+            margin-top: auto;
+            padding-top: 40px;
+            border-top: 1px dashed var(--primary-pink);
+            color: #AAAAAA;
+            font-size: 0.9rem;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>누나 친구</h1>
+        <p>5년전, 끝난 줄만 알았던 누나가 다시 찾아왔다.</p>
+    </div>
+
+    <h2 class="section-title">등장인물</h2>
+    <div class="character-container">
+        <div class="character-card">
+            <img src="https://raw.githubusercontent.com/budae1/g/refs/heads/main/강도희 캐릭터 카드1.png">
+            <h3>강도희</h3>
+            <div class="nickname">5년 전, 널 귀여워했지만 헤어졌던 누나</div>
+            <p>다시 만난 그녀는 더 눈부셨다. 잊었던 감정이 다시 피어난다. 물론 다른 남자꺼지만...</p>
+            <div class="tags">
+                <span class="tag">#첫사랑재회</span>
+                <span class="tag">#순애보누나</span>
+                <span class="tag">#과거의인연</span>
+            </div>
+        </div>
+
+        <div class="character-card">
+            <img src="https://raw.githubusercontent.com/budae1/g/refs/heads/main/이다연 캐릭터카드.png">
+            <h3>이다연</h3>
+            <div class="nickname">거친 의붓누나</div>
+            <p>날 매정하게 대하던 태도는 어디로 가고 도희 누나한테 질투를 하는 거 같다?</p>
+            <div class="tags">
+                <span class="tag">#의붓누나</span>
+                <span class="tag">#츤데레의매력</span>
+                <span class="tag">#금단의사랑?</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2026 Simulation Game Project. All Rights Reserved.
+    </footer>
+</body>
+</html>
